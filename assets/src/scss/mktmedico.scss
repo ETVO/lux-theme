@@ -1,0 +1,189 @@
+.hero {
+    background-color: var(--bs-primary);
+
+    .logo img {
+        width: 100px;
+    }
+
+    .content {
+        .subtitle {
+            padding: 0.25rem 0.25rem 0.25rem 0.5rem;
+            background-color: white;
+            // border: solid 2px var(--bs-primary);
+            // border-radius: .25rem;
+            letter-spacing: 0.25rem;
+        }
+
+        .title {
+            font-weight: 700;
+        }
+
+        *::selection {
+            background-color: var(--bs-white);
+            color: black;
+        }
+    }
+
+    .form {
+        max-width: 500px;
+
+        .form-wrap {
+            width: 100%;
+            height: 100%;
+            padding: 1.5rem;
+            background-color: white;
+            box-shadow: 1px 1px 5px rgba(#000, 0.2);
+            border-radius: 0.25rem;
+
+            .btn-submit {
+                width: 100%;
+                display: block;
+                font-weight: bold;
+                font-size: 1.1rem;
+                border: none;
+            }
+        }
+    }
+}
+
+.sobre {
+    .capa img {
+        width: 100%;
+        max-width: 325px;
+        margin-top: -150px;
+    }
+
+    .content {
+        .title {
+            padding-bottom: 1rem;
+        }
+
+        .icons {
+            .icon {
+                padding: 0 0.5rem;
+                > div:not(.text) {
+                    margin: 0.5rem 0;
+                    display: inline-flex;
+                    color: #000;
+                    border: solid 2px #000;
+                    font-size: 1.75rem;
+                    padding: 0.75rem;
+                    line-height: 1;
+                    border-radius: 50rem;
+                }
+            }
+        }
+    }
+}
+
+.sucesso {
+    .capa img {
+        width: 100%;
+        max-width: 325px;
+    }
+}
+
+.contacts {
+    .social .link {
+        display: inline-block;
+        color: black;
+
+        padding: 0 0.5rem 0.25rem;
+        border-radius: 50rem;
+        font-size: 1.5rem;
+        margin-bottom: -0.5rem;
+
+        span::before {
+            display: block;
+            line-height: 1;
+            margin-top: -0.5rem;
+        }
+
+        &:hover,
+        &:active {
+            background-color: var(--bs-primary);
+        }
+    }
+
+    .link {
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+
+        a {
+            padding: 0 0.75rem 0.25rem;
+            border-radius: 50rem;
+
+            font-weight: 500;
+            margin-bottom: -0.75rem;
+
+            span.icon::before {
+                font-size: 1.5rem;
+                display: inline-block;
+                line-height: 1;
+                margin-top: -0.75rem;
+            }
+
+            small {
+                font-size: 0.85em;
+                font-weight: normal;
+            }
+
+            &:hover,
+            &:active {
+                background-color: var(--bs-primary);
+            }
+        }
+    }
+
+    .site {
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero {
+        .content {
+            .title {
+                font-size: calc(1.25rem + 0.9vw);
+            }
+        }
+
+        .form {
+            max-width: 100%;
+        }
+    }
+
+    .sobre {
+        .capa {
+            display: flex;
+            img {
+                max-width: 250px;
+                margin-top: unset;
+                margin: 0 auto;
+                margin-bottom: 2.5rem;
+            }
+        }
+
+        .content {
+            text-align: center;
+
+            .icons {
+                .icon {
+                    margin: 1rem 0;
+                }
+            }
+        }
+    }
+
+    .sucesso {
+        .capa {
+            display: flex;
+            img {
+                margin: 0 auto;
+                margin-bottom: 2.5rem;
+                max-width: 250px;
+            }
+        }
+    }
+}

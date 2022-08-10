@@ -1,0 +1,52 @@
+@import './partials/soon.scss';
+@import './partials/footer.scss';
+
+html {
+    scroll-behavior: smooth;
+    font-variant-numeric: lining-nums;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+body {
+    overflow-y: scroll !important;
+
+    &.error404 {
+        display: flex;
+        flex-flow: column;
+        min-height: 100vh;
+    }
+}
+
+*::selection {
+    background-color: var(--bs-primary);
+    color: black;
+}
+
+.fw-extrabold {
+    font-weight: 800;
+}
+
+mark {
+    background-color: var(--bs-primary) !important;
+    padding: .1rem 0 !important;
+}
+
+form {
+    label {
+        cursor: pointer;
+    }
+}
+
+
+a {
+    color: var(--bs-dark);
+    text-decoration: underline;
+
+    &:hover,
+    &:active {
+        background-color: var(--bs-primary);
+    }
+}
