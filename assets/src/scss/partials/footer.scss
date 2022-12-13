@@ -1,1 +1,212 @@
+.cookies-consent {
+    display: none;
+}
 
+.rainbow {
+    position: relative;
+    z-index: 1;
+    margin-bottom: -50px;
+    padding-top: 25px;
+    overflow: hidden;
+
+    .strip {
+        height: 100px;
+        width: 100%;
+        margin-bottom: -87px;
+        margin-left: -5px;
+    }
+
+    .yellow {
+        background-color: #FECD00;
+        transform: scale(1.2) rotate(0.8deg);
+    }
+    .purple {
+        background-color: #9D00FE;
+        transform: scale(1.2) rotate(1.6deg);
+    }
+    .green {
+        background-color: #61FE00;
+        transform: scale(1.2) rotate(2.4deg);
+    }
+    .pink {
+        background-color: #FE0061;
+        transform: scale(1.2) rotate(3.2deg);
+    }
+    .black {
+        background-color: #111;
+        transform: scale(1.2) rotate(4deg);
+        margin-bottom: 0;
+    }
+
+}
+
+footer {
+    position: relative;
+    z-index: 2;
+    color: white;
+    background-color: #111;
+    padding: 2rem 0 3rem;
+
+
+    h4 {
+        color: inherit;
+    }
+
+    a {
+        color: inherit;
+        transition: color .2s;
+
+        &:hover,
+        &:active,
+        &:focus {
+            color: mix(black, white, 30%);
+        }
+    }
+
+    .footer-1 {
+        .social-icons {
+            a {
+                display: inline-block;
+
+                font-size: calc(1rem + 0.6vw);
+                margin-right: 1rem;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .logo img {
+            width: 150px;
+            height: auto;
+            max-width: 100%;
+        }
+    }
+
+    .footer-2 {
+        .contacts {
+            .contact-icons {
+                display: flex;
+                flex-flow: column;
+
+                a {
+                    margin: .25rem;
+                    font-weight: 300;
+
+                    .icon {
+                        margin-right: .25rem;
+                        font-size: 1.1rem;
+                    }
+                }
+            }
+
+            .link-cliente {
+                a {
+                    font-size: 1.1rem;
+                    color: var(--bs-primary);
+
+                    .icon {
+                        margin-right: .25rem;
+                    }
+
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        color: mix(black, #fecd00, 30%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.bottom {
+    padding: 1rem 0;
+
+    background-color: #222;
+    color: white;
+
+    font-size: .9rem;
+
+    a {
+        color: inherit;
+
+        transition: color .2s;
+
+        &:hover,
+        &:active,
+        &:focus {
+            color: #fecd00;
+        }
+    }
+}
+
+@media all and (max-width: 768px) {
+    .rainbow {
+        margin-bottom: -5px;
+        padding-top: 10px;
+    
+        .strip {
+            height: 70px;
+            width: 100%;
+            margin-bottom: -60px;
+        }
+
+        .black {
+            margin-bottom: -35px;
+        }
+    }
+
+    footer {
+        .footer-1 {
+            .logo img {
+                width: calc(75px + 2.5vw);
+            }
+        }
+    }
+}
+
+
+@media all and (max-width: 576px) {
+
+
+    .rainbow {
+        position: relative;
+        z-index: 1;
+        margin-bottom: -65px;
+        padding-top: 25px;
+    
+        .strip {
+            height: 100px;
+            margin-bottom: -90px;
+        }
+    
+        .yellow {
+            background-color: #FECD00;
+            transform: scale(1.2) rotate(0.8deg);
+        }
+        .purple {
+            background-color: #9D00FE;
+            transform: scale(1.2) rotate(2deg);
+        }
+        .green {
+            background-color: #61FE00;
+            transform: scale(1.2) rotate(3.5deg);
+        }
+        .pink {
+            background-color: #FE0061;
+            transform: scale(1.2) rotate(5deg);
+        }
+        .black {
+            background-color: #111;
+            transform: scale(1.2) rotate(6.5deg);
+            margin-bottom: 0;
+        }
+    
+    }
+
+    footer {
+        padding-top: 0;
+    }
+}

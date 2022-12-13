@@ -8,88 +8,100 @@
 
 $footer_logo = get_theme_mod('footer_logo');
 
-$social = get_theme_mod('info_social');
+$social = get_theme_mod('social_icons');
 
-$phone = get_theme_mod('info_telefone');
 $whatsapp = get_theme_mod('info_whatsapp');
-$address = get_theme_mod('info_endereco');
+$phone = get_theme_mod('info_phone');
+$email = get_theme_mod('info_email');
 
-$chars = ['(', ')', ' ', '-', '+'];
-$phone_link = str_replace($chars, '', $phone);
-$whatsapp_link = str_replace($chars, '', $whatsapp);
+$email_url = "mail:" . $email;
 
-$address_map = "https://google.com/maps/place/" . htmlspecialchars(strip_tags(str_replace('</p>', '+', $address)));
+$phone_url = "tel:" . preg_replace('/[^0-9]/', '', $phone);
 
-if (substr('$whatsapp_link', 0, 2) != '55') $whatsapp_link = '55' . $whatsapp_link;
+$whatsapp_url = preg_replace('/[^0-9]/', '', $whatsapp);
+$whatsapp_url = 'https://api.whatsapp.com/send/?phone=' . $whatsapp_url;
+
+$whatsapp = get_theme_mod('info_whatsapp');
+
+$portal_cliente = get_theme_mod('portal_cliente');
 
 ?>
 
 <div class="cookies-consent" id="cookiePopup">
+    <div class="heading">
+        <img src="<?php echo get_site_icon_url(); ?>">
+        <b>Este site utiliza cookies.</b>
+    </div>
     <div class="text">
-        <p class="mb-2">
-        <b class="d-block">Este site utiliza cookies.</b>
         Ao navegar, você está concordando com o armazenamento e uso de cookies em nosso site.
-        </p>
     </div>
     <div class="action">
         <button class="btn btn-outline-primary" id="cookieAccept">aceitar</button>
     </div>
 </div>
 
+<div class="rainbow">
+    <div class="strip yellow"></div>
+    <div class="strip purple"></div>
+    <div class="strip green"></div>
+    <div class="strip pink"></div>
+    <div class="strip black"></div>
+</div>
+
 <footer>
-    <div class="footer-nav">
-        <div class="container col-xl-8 d-flex py-3 flex-column flex-md-row">
-            <div class="brand mx-auto mb-3 mb-lg-0 ms-lg-0 me-lg-5 p-0">
-                <a href="<?php echo home_url() ?>">
-                    <img src="<?php echo $footer_logo; ?>" alt="<?php echo bloginfo('site_title') ?>">
-                </a>
-            </div>
-            <div class="social mx-auto ms-lg-0">
+
+    <div class="container default-lux">
+        <div class="footer-1 d-flex justify-content-between align-items-center">
+            <div class="social-icons">
                 <?php foreach ($social as $link) : ?>
-                    <a class="tlink" href="<?php echo $link['url']; ?>" title="<?php echo $link['icon']; ?>">
-                        <span class="bi bi-<?php echo $link['icon']; ?>"></span>
+                    <a href="<?php echo $link['url']; ?>" title="<?php echo $link['icon']; ?>" target="_blank">
+                        <span class="bi-<?php echo $link['icon']; ?>"></span>
                     </a>
                 <?php endforeach; ?>
             </div>
-
-
-
-            <div class="navbar navbar-expand-lg d-none d-lg-block">
-                <?php
-                wp_nav_menu(
-                    array(
-                        'theme_location'    => 'footer_menu',
-                        'depth'             => 2,
-                        'container_class'   => 'ms-auto',
-                        'menu_class'        => 'navbar-nav',
-                        'walker'            => new BS_Menu_Walker()
-                    )
-                );
-                ?>
+            <div class="logo">
+                <?php the_custom_logo(); ?>
             </div>
         </div>
-    </div>
-    <div class="footer-info">
-        <div class="container col-xl-8 d-flex py-3 flex-column flex-md-row">
-            <div class="phones me-md-4 text-center">
-                <a href="tel:<?php echo $phone_link; ?>" target="_blank">
-                    <h5 class="mb-1"><?php echo $phone; ?></h5>
-                </a>
-                <a href="https://api.whatsapp.com/send/?phone=<?php echo $whatsapp_link; ?>" target="_blank">
-                    <span class="bi-whatsapp"></span>&nbsp;
-                    <?php echo $whatsapp; ?>
-                </a>
-            </div>
-            <div class="address mt-3 mt-md-auto ms-md-0 m-auto text-center text-md-start">
-                <a target="_blank" href="<?php echo $address_map; ?>">
-                    <?php echo $address; ?>
-                </a>
+        <div class="footer-2 d-flex">
+            <div class="contacts">
+                <h4>Contactos</h4>
+                <div class="contact-icons">
+                    <!-- WhatsApp -->
+                    <a href="<?php echo $whatsapp_url; ?>">
+                        <span class="icon bi-whatsapp"></span>
+                        <span class="text"><?php echo $whatsapp; ?></span>
+                    </a>
+
+                    <!-- Telefone -->
+                    <a href="<?php echo $phone_url; ?>">
+                        <span class="icon bi-phone"></span>
+                        <span class="text"><?php echo $phone; ?></span>
+                    </a>
+
+                    <!-- Email -->
+                    <a href="<?php echo $email_url; ?>">
+                        <span class="icon bi-envelope"></span>
+                        <span class="text"><?php echo $email; ?></span>
+                    </a>
+                </div>
+
+                <div class="link-cliente my-3">
+                    <a href="<?php echo $portal_cliente; ?>">
+                        <span class="icon bi-person-fill"></span>
+                        <span>Portal do Cliente</span>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="footer-bottom d-flex py-3">
-        <span class="container text-center text-uppercase">
-            <?php echo date('Y'); ?> © GPR Investimentos Imobiliários&nbsp;&bull;&nbsp;Desenvolvido por <a href="https://imobmark.com.br/" target="_blank">Imobmark</a>
-        </span>
     </div>
 </footer>
+<div class="bottom">
+    <div class="container default-lux d-flex">
+        <span class="text-center m-auto">
+            <?php echo date('Y') ?> © <a class="fw-bold" href="<?php echo home_url(); ?>">Lux Digital</a>. 
+            <br class="d-block d-sm-none">
+            Todos os direitos reservados.
+        </span>
+    </div>
+</div>

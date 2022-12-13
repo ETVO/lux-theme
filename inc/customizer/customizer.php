@@ -39,7 +39,7 @@ new \Kirki\Panel(
 );
 
 $sections = [
-    'contact'            => __('Contatos'),
+    'contact' => __('Contatos'),
 ];
 
 $section_title_class = 'customize-section-title';
@@ -47,17 +47,16 @@ $section_title_class = 'customize-section-title';
 /**
  * Add all sections
  */
-foreach($sections as $section_id => $title) {
+foreach ($sections as $section_id => $title) {
     $section_args = [
         'title' => $title,
         'panel' => $panel_id
     ];
 
-    new \Kirki\Section( 
-        $section_id, 
+    new \Kirki\Section(
+        $section_id,
         $section_args
     );
-
 }
 
 
@@ -65,76 +64,84 @@ foreach($sections as $section_id => $title) {
 
 $section = 'contact';
 
+new \Kirki\Field\URL(
+    [
+        'settings' => 'portal_cliente',
+        'label'    => __('Link do Portal do Cliente'),
+        'section'  => $section,
+    ]
+);
+
 new \Kirki\Field\Generic(
-	[
-		'settings'    => 'info_title',
-		'section'     => $section,
+    [
+        'settings'    => 'info_title',
+        'section'     => $section,
         'default'   => 'Contatos',
-		'choices'     => [
-			'element' => 'h3',
-			'class'   => $section_title_class,
-		],
-	]
+        'choices'     => [
+            'element' => 'h3',
+            'class'   => $section_title_class,
+        ],
+    ]
 );
 
 new \Kirki\Field\Text(
-	[
-		'settings' => 'info_phone',
-		'label'    => __('Telefone'),
-		'section'  => $section,
-	]
+    [
+        'settings' => 'info_phone',
+        'label'    => __('Telefone'),
+        'section'  => $section,
+    ]
 );
 
 new \Kirki\Field\Text(
-	[
-		'settings' => 'info_whatsapp',
-		'label'    => __('WhatsApp'),
-		'section'  => $section,
-	]
+    [
+        'settings' => 'info_whatsapp',
+        'label'    => __('WhatsApp'),
+        'section'  => $section,
+    ]
 );
 
 new \Kirki\Field\Text(
-	[
-		'settings' => 'info_email',
-		'label'    => __('Email'),
-		'section'  => $section,
-	]
+    [
+        'settings' => 'info_email',
+        'label'    => __('Email'),
+        'section'  => $section,
+    ]
 );
 
 new \Kirki\Field\Editor(
-	[
-		'settings' => 'info_address',
-		'label'    => __('Endereço'),
-		'section'  => $section,
-	]
+    [
+        'settings' => 'info_address',
+        'label'    => __('Endereço'),
+        'section'  => $section,
+    ]
 );
 
 
 new \Kirki\Field\Generic(
-	[
-		'settings'    => 'social_title',
-		'section'     => $section,
+    [
+        'settings'    => 'social_title',
+        'section'     => $section,
         'default'   => 'Redes Sociais',
-		'choices'     => [
-			'element' => 'h3',
-			'class'   => $section_title_class,
-		],
-	]
+        'choices'     => [
+            'element' => 'h3',
+            'class'   => $section_title_class,
+        ],
+    ]
 );
 
 new \Kirki\Field\Repeater(
     [
         'settings'    => 'social_icons',
-		'label'       => __('Ícones Redes Sociais'),
-		'section'     => $section,
+        'label'       => __('Ícones Redes Sociais'),
+        'section'     => $section,
         'button_label' => esc_html__('Adicionar nova'),
         'row_label' => [
             'type'  => 'field',
             'value' => __('Ícone'),
             'field' => 'icon',
         ],
-		'default'     => [
-			[
+        'default'     => [
+            [
                 'icon' => 'facebook',
                 'url'  => 'https://www.facebook.com/',
             ],
@@ -142,9 +149,9 @@ new \Kirki\Field\Repeater(
                 'icon' => 'instagram',
                 'url'  => 'https://www.instagram.com/',
             ],
-		],
-		'fields'      => [
-			'icon' => [
+        ],
+        'fields'      => [
+            'icon' => [
                 'type' => 'text',
                 'label' => __('Ícone'),
                 'description' => __('Utilize os ícones do') . ' Bootstrap Icons',
@@ -153,6 +160,6 @@ new \Kirki\Field\Repeater(
                 'type' => 'text',
                 'label' => __('Link'),
             ],
-		],
+        ],
     ]
 );

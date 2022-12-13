@@ -1,7 +1,8 @@
 @import './form.scss';
 
-@import './partials/soon.scss';
+// Import styles for partials 
 @import './partials/footer.scss';
+@import './partials/header.scss';
 
 html {
     scroll-behavior: smooth;
@@ -10,6 +11,32 @@ html {
 
 a {
     text-decoration: none !important;
+}
+
+a.btn-cta {
+    background-color: var(--bs-primary);
+    font-weight: 600;
+    padding: .25rem .5rem;
+
+    transition: background .2s;
+
+    &::after {
+        font-weight: 500;
+        vertical-align: -.2rem;
+        line-height: 1;
+        font-family: 'bootstrap-icons';
+        content: '\F138';
+    }
+
+    &:hover,
+    &:focus {
+        background-color: mix(white, #fecd00, 20%);
+    }
+}
+
+.container {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
 }
 
 body {
@@ -42,13 +69,8 @@ form {
     }
 }
 
-
-a {
-    color: var(--bs-dark);
-    text-decoration: underline;
-
-    &:hover,
-    &:active {
-        background-color: var(--bs-primary);
+@media all and (min-width: 1200px) {
+    .container.default-lux {
+        max-width: 900px;
     }
 }
