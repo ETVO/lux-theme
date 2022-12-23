@@ -1,0 +1,102 @@
+.lux_no_caminho {
+    padding: 5rem 0 3rem;
+
+    > .container {
+        position: relative;
+    }
+
+    .spheres {
+        position: absolute;
+
+        top: calc(-5rem + 40px * -1);
+        right: 0;
+    }
+
+    .title {
+        img {
+            display: block;
+            width: 125px;
+            margin: 0.5rem 0;
+        }
+
+        margin-bottom: 2rem;
+    }
+
+    .text {
+        & > p > em {
+            font-size: 1.1rem;
+        }
+    }
+
+    .wrap {
+        margin-top: 3rem;
+        .image {
+            img {
+                width: 320px;
+                max-width: 100%;
+            }
+        }
+
+        .action {
+            display: flex;
+
+            .inner {
+                margin: auto;
+                
+                a {
+                    display: block;
+                    margin: 1rem 0;
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 576px) {
+    .lux_no_caminho {
+        padding: 6rem 0 4rem;
+        overflow: hidden; 
+        .spheres {
+            top: -4rem;
+            right: -75px;
+
+            // width: 175px;
+            // height: 175px;
+            
+            // &::before {
+            //     width: 175px;
+            //     height: 175px;
+            // }
+        }
+    
+        .title {
+            img {
+                width: 110px;
+            }
+    
+            margin-bottom: 2rem;
+        }
+
+        .wrap {
+            .image {
+                margin-bottom: 1rem;
+                img {
+                    width: 250px;
+                    margin: auto;
+                    margin-left: 0;
+                }
+            }
+    
+            .action {
+                display: flex;
+                
+                .inner {
+                    margin: auto;
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}

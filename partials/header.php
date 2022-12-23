@@ -34,7 +34,7 @@ $portal_cliente = get_theme_mod('portal_cliente');
             <?php if($portal_cliente) : ?>
             <div class="link-cliente">
                 <a href="<?php echo $portal_cliente; ?>" class="btn-cta">
-                    Cliente
+                    Sou Cliente
                 </a>
             </div>
             <?php endif; ?>

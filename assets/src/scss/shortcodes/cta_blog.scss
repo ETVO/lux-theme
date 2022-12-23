@@ -1,0 +1,212 @@
+.cta_blog {
+    padding: 5rem 0;
+    background-color: #0c0c0c;
+    color: white;
+
+    position: relative;
+
+    .header {
+        .icon {
+            position: absolute;
+            top: -25px;
+            margin-left: -5%;
+        }
+
+        .title {
+            h2 {
+                color: white;
+                font-weight: 700;
+            }
+            margin-bottom: 1rem;
+        }
+
+        .text {
+            font-weight: 300;
+
+            strong,
+            b {
+                font-weight: 600;
+            }
+        }
+    }
+
+    .no-posts {
+        padding: 2rem 0;
+    }
+
+    .posts {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+
+        width: 1200px;
+
+        max-width: 100% !important;
+
+        color: #000;
+
+        .post {
+            border-radius: 0;
+            border: none;
+
+            position: relative;
+
+            .card-img-top {
+                position: relative;
+                z-index: 0;
+
+                overflow: hidden;
+                border-radius: 0;
+
+                img {
+                    height: 100px;
+                    width: 100%;
+                    object-fit: cover;
+
+                    transition: transform 0.3s;
+                }
+
+                .overlay {
+                    opacity: 0.4;
+                    inset: 0;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                }
+
+                &:hover,
+                &:focus,
+                &:active {
+                    img {
+                        transform: scale(1.05);
+                    }
+                }
+            }
+
+            .tag {
+                position: absolute;
+
+                padding: 0.25rem 0.75rem;
+
+                background-color: #000;
+                color: white;
+                top: 0.5rem;
+                right: 0.5rem;
+
+                font-weight: 500;
+                font-size: 0.9rem;
+
+                transition: background-color 0.3s;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    background-color: #222;
+                }
+            }
+
+            .card-body {
+                padding: 0 1rem;
+                // position: relative;
+
+                .author-image {
+                    position: relative;
+                    z-index: 1;
+                    display: inline-flex;
+                    margin-top: -48px;
+                    margin-bottom: 0.75rem;
+
+                    img {
+                        width: 48px;
+                        height: 48px;
+                        border-radius: 50%;
+                    }
+                }
+
+                .card-title {
+                    font-weight: 700;
+                    transition: color 0.2s;
+                    margin-bottom: 0.5rem;
+
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        color: #494949;
+                    }
+                }
+
+                .meta {
+                    // position: absolute;
+
+                    // padding: 0.25rem 0.5rem;
+
+                    // background: rgba(#f7f7f7, .6);
+                    // backdrop-filter: blur(5px);
+                    // left: 0.5rem;
+                    // top: .5rem;
+                    // border-radius: .25rem .25rem;
+
+                    font-size: 0.8rem;
+                    color: #aaa;
+                    margin-bottom: 0.5rem;
+
+                    span.bi-clock {
+                        margin-right: .25rem;
+                        font-size: .7rem;
+                    }
+
+                    span.sep {
+                        color: #ccc;
+                    }
+                }
+
+                .card-text {
+                    font-size: 0.9rem;
+                }
+            }
+
+            .card-footer {
+                background: none;
+                border: none;
+                color: #aaa;
+
+                .author-name {
+                    font-style: italic;
+                }
+
+                a {
+                    font-size: .9rem;
+                }
+            }
+        }
+    }
+
+    .action-container .action {
+        a {
+            font-size: 1.1rem;
+            color: white;
+        }
+    }
+}
+
+@media all and (max-width: 992px) {
+    .cta_blog {
+        .posts {
+            .row .col:last-child {
+                display: none;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 576px) {
+    .cta_blog {
+        padding: 4rem 0;
+        .header {
+            margin-bottom: 1rem;
+            .icon {
+                margin-left: 0;
+            }
+        }
+    }
+}

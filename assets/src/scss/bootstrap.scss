@@ -3,11 +3,11 @@ $dark: #000;
 $light: #fff;
 $secondary: #444;
 
-$line-height-base: 1.5;
+$line-height-base: 1.25;
 $line-height-sm: 1.25;
-$line-height-lg: 2;
+$line-height-lg: 1.5;
 
-$headings-font-weight: 600;
+$headings-font-weight: 700;
 $headings-color: $dark;
 
 $body-bg: $light;
@@ -17,6 +17,10 @@ $link-color: $dark;
 $carousel-transition-duration: .8s;
 
 $headings-font-family: 'Raleway', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !default;
-$font-family-sans-serif: 'Albert Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !default;
+$font-family-base: 'Albert Sans';
+// $font-family-sans-serif: 'Albert Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !default;
 
 @import "~bootstrap/scss/bootstrap";
+
+
+$lead-font-size: $font-size-base * 1.25;

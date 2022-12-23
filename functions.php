@@ -57,8 +57,9 @@ final class Theme_Functions
         // Add action to make custom query before loading posts
         add_action("pre_get_posts", array($this, "set_query_params"));
         
-		// Add action to define custom excerpt length
+		// Add action to define custom excerpt
         add_filter("excerpt_length", array($this, "custom_excerpt_len"), 999);
+		add_filter('excerpt_more', array($this, 'new_excerpt_more'));
 	}
 
 	/**
@@ -279,6 +280,16 @@ final class Theme_Functions
      */
 	public static function custom_excerpt_len( $length ) {
 		return 20;
+	}
+
+	/**
+	 * Change excerpt more ellipsis
+	 * 
+	 * @param string more
+	 * @since 3.0
+	 */
+	public static function new_excerpt_more($more) {
+		return '...';
 	}
 
 }

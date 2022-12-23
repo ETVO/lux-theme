@@ -9,6 +9,8 @@
     padding-top: 25px;
     overflow: hidden;
 
+    background: linear-gradient(rgba(#111, 0) 50%, rgba(#111, 1) 51%);
+
     .strip {
         height: 100px;
         width: 100%;
@@ -45,11 +47,12 @@ footer {
     z-index: 2;
     color: white;
     background-color: #111;
-    padding: 2rem 0 3rem;
+    padding: 0 0 3rem;
 
 
     h4 {
         color: inherit;
+        font-size: 1.25rem;
     }
 
     a {
@@ -85,6 +88,7 @@ footer {
     }
 
     .footer-2 {
+        margin-top: 1.6rem;
         .contacts {
             .contact-icons {
                 display: flex;
@@ -117,6 +121,9 @@ footer {
                     }
                 }
             }
+        }
+
+        .recent-posts {
         }
     }
 }
@@ -207,6 +214,6 @@ footer {
     }
 
     footer {
-        padding-top: 0;
+        padding: 0 0 1rem 0;
     }
 }

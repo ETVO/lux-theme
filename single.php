@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Page template
  * 
@@ -7,12 +8,6 @@
 
 get_header();
 
-?>
-
-<div class="page-container">
-    <?php the_content(); ?>
-</div>
-
-<?php
+the_content();
 
 get_footer();

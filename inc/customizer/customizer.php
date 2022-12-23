@@ -40,6 +40,8 @@ new \Kirki\Panel(
 
 $sections = [
     'contact' => __('Contatos'),
+    'blog' => __('Blog'),
+    'home' => 'Home',
 ];
 
 $section_title_class = 'customize-section-title';
@@ -60,7 +62,7 @@ foreach ($sections as $section_id => $title) {
 }
 
 
-/** ----- Rodapé ----- */
+/** ----- Contatos ----- */
 
 $section = 'contact';
 
@@ -161,5 +163,86 @@ new \Kirki\Field\Repeater(
                 'label' => __('Link'),
             ],
         ],
+    ]
+);
+
+/** ----- Blog ----- */
+
+$section = 'blog';
+
+new \Kirki\Field\Generic(
+    [
+        'settings'    => 'cta_blog',
+        'section'     => $section,
+        'default'   => 'CTA Blog',
+        'choices'     => [
+            'element' => 'h3',
+            'class'   => $section_title_class,
+        ],
+    ]
+);
+
+new \Kirki\Field\Text(
+    [
+        'settings' => 'cta_blog_title',
+        'label'    => __('Título'),
+        'section'  => $section,
+    ]
+);
+
+new \Kirki\Field\Editor(
+    [
+        'settings' => 'cta_blog_text',
+        'label'    => __('Texto'),
+        'section'  => $section,
+    ]
+);
+
+/** ----- Home ----- */
+
+$section = 'home';
+
+new \Kirki\Field\Generic(
+    [
+        'settings'    => 'lux_no_caminho',
+        'section'     => $section,
+        'default'   => 'Uma Lux no seu caminho',
+        'choices'     => [
+            'element' => 'h3',
+            'class'   => $section_title_class,
+        ],
+    ]
+);
+
+new \Kirki\Field\Editor(
+    [
+        'settings' => 'lux_no_caminho_text',
+        'label'    => __('Texto'),
+        'section'  => $section,
+    ]
+);
+
+
+new \Kirki\Field\Image(
+    [
+        'settings' => 'lux_no_caminho_image',
+        'label'    => __('Imagem'),
+        'section'  => $section,
+    ]
+);
+
+new \Kirki\Field\URL(
+    [
+        'settings' => 'link_consultoria',
+        'label'    => __('Link "consultoria de marketing"'),
+        'section'  => $section,
+        ]
+);
+
+new \Kirki\Field\URL(
+    [
+        'settings' => 'link_trabalhar',
+        'label'    => __('Link "trabalhar com a Lux Digital"'),
+        'section'  => $section,
     ]
 );

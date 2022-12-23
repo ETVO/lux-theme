@@ -1,37 +1,44 @@
-@import './form.scss';
+// Import default form styling
+@import "./form.scss";
 
-// Import styles for partials 
-@import './partials/footer.scss';
-@import './partials/header.scss';
+// Import utility classes
+@import "./util.scss";
+
+// Import styles for partials
+@import "./partials/footer.scss";
+@import "./partials/header.scss";
+@import "./partials/footer-feed.scss";
+
+// Import styles for shortcodes
+@import "./shortcodes/cta_blog.scss";
+@import "./shortcodes/lux_no_caminho.scss";
 
 html {
     scroll-behavior: smooth;
     font-variant-numeric: lining-nums;
 }
 
-a {
-    text-decoration: none !important;
+body {
+    font-feature-settings: "ss04" on, "ss01" on;
 }
 
-a.btn-cta {
-    background-color: var(--bs-primary);
-    font-weight: 600;
-    padding: .25rem .5rem;
+h6,
+.h6,
+h5,
+.h5,
+h4,
+.h4,
+h3,
+.h3,
+h2,
+.h2,
+h1,
+.h1 {
+    font-feature-settings: "ss04" off, "ss01" off;
+}
 
-    transition: background .2s;
-
-    &::after {
-        font-weight: 500;
-        vertical-align: -.2rem;
-        line-height: 1;
-        font-family: 'bootstrap-icons';
-        content: '\F138';
-    }
-
-    &:hover,
-    &:focus {
-        background-color: mix(white, #fecd00, 20%);
-    }
+a {
+    text-decoration: none !important;
 }
 
 .container {
@@ -54,23 +61,13 @@ body {
     color: black;
 }
 
-.fw-extrabold {
-    font-weight: 800;
-}
-
 mark {
     background-color: var(--bs-primary) !important;
-    padding: .1rem 0 !important;
+    padding: 0.1rem 0 !important;
 }
 
 form {
     label {
         cursor: pointer;
-    }
-}
-
-@media all and (min-width: 1200px) {
-    .container.default-lux {
-        max-width: 900px;
     }
 }

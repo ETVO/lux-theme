@@ -14,7 +14,7 @@ $whatsapp = get_theme_mod('info_whatsapp');
 $phone = get_theme_mod('info_phone');
 $email = get_theme_mod('info_email');
 
-$email_url = "mail:" . $email;
+$email_url = "mailto:" . $email;
 
 $phone_url = "tel:" . preg_replace('/[^0-9]/', '', $phone);
 
@@ -52,6 +52,9 @@ $portal_cliente = get_theme_mod('portal_cliente');
 
     <div class="container default-lux">
         <div class="footer-1 d-flex justify-content-between align-items-center">
+            <div class="logo">
+                <?php the_custom_logo(); ?>
+            </div>
             <div class="social-icons">
                 <?php foreach ($social as $link) : ?>
                     <a href="<?php echo $link['url']; ?>" title="<?php echo $link['icon']; ?>" target="_blank">
@@ -59,12 +62,9 @@ $portal_cliente = get_theme_mod('portal_cliente');
                     </a>
                 <?php endforeach; ?>
             </div>
-            <div class="logo">
-                <?php the_custom_logo(); ?>
-            </div>
         </div>
-        <div class="footer-2 d-flex">
-            <div class="contacts">
+        <div class="footer-2 d-flex justify-content-between flex-column flex-lg-row">
+            <div class="contacts col-12 col-lg-4">
                 <h4>Contactos</h4>
                 <div class="contact-icons">
                     <!-- WhatsApp -->
@@ -93,13 +93,19 @@ $portal_cliente = get_theme_mod('portal_cliente');
                     </a>
                 </div>
             </div>
+
+            <div class="recent-posts col-12 col-lg-8 mt-4 mt-lg-0">
+                <?php
+                    get_template_part('partials/blog/footer-feed');
+                ?>
+            </div>
         </div>
     </div>
 </footer>
 <div class="bottom">
     <div class="container default-lux d-flex">
-        <span class="text-center m-auto">
-            <?php echo date('Y') ?> © <a class="fw-bold" href="<?php echo home_url(); ?>">Lux Digital</a>. 
+        <span class="text-start">
+            <?php echo date('Y') ?> © <a class="fw-bold" href="<?php echo home_url(); ?>">Lux Digital</a>.
             <br class="d-block d-sm-none">
             Todos os direitos reservados.
         </span>
