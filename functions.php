@@ -268,6 +268,7 @@ final class Theme_Functions
             if(isset($_GET['category'])) {
                 $category = $_GET['category'];
                 $query->set( 'category_name', $category );
+                $query->set( 'ignore_sticky_posts', true );
             }
         }
     }

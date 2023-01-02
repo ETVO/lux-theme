@@ -41,3 +41,12 @@
 label[for] {
     cursor: pointer;
 }
+
+.searchform {
+    .submit {
+        margin-left: -1.75rem;
+        border-left: none;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}

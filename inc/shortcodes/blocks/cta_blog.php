@@ -14,7 +14,7 @@ function cta_blog($attrs)
     $archive_link = get_permalink(get_option('page_for_posts'));
 
     // Posts Per Page (-1 means it shows all)
-    $ppp = 3;
+    $ppp = 2;
 
     // WP_Query arguments
     $args = array(
@@ -48,7 +48,7 @@ function cta_blog($attrs)
         </div>
         <?php
         if ($query->have_posts()) : ?>
-            <div class="container default-lux posts">
+            <div class="post-feed container default-lux">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
                     <?php
                     while ($query->have_posts()) :
@@ -108,7 +108,7 @@ function cta_blog($attrs)
                                 <div class="card-footer d-flex flex-column flex-sm-row">
                                     <!-- <small class="m-auto ms-0 author-name"><?php echo $author_name; ?></small> -->
 
-                                    <a href="<?php echo $permalink; ?>" class="btn-cta m-auto me-0">continue lendo</a>
+                                    <!-- <a href="<?php echo $permalink; ?>" class="btn-cta m-auto me-0">continue lendo</a> -->
                                 </div>
                             </div>
                         </div>

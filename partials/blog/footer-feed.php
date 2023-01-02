@@ -12,7 +12,7 @@ $order = 'DESC';
 $archive_link = get_permalink(get_option('page_for_posts'));
 
 // Posts Per Page (-1 means it shows all)
-$ppp = 3;
+$ppp = 2;
 
 // WP_Query arguments
 $args = array(
