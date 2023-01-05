@@ -30,8 +30,8 @@ $color = 'green';
     </div>
 
     <div class="container default-lux">
-        <div class="filters row row-cols-2">
-            <div class="col categories-wrap">
+        <div class="filters row row-cols-1 row-cols-sm-2">
+            <div class="col categories-wrap mb-2 mb-sm-0">
                 <?php get_template_part("partials/blog/categories"); ?>
             </div>
             <div class="col search">

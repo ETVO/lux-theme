@@ -8,6 +8,6 @@
 
 get_header();
 
-the_content();
+get_template_part("partials/blog/single");
 
 get_footer();

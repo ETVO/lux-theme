@@ -1,8 +1,11 @@
+@import "./post-feed.scss";
+@import "./blog-single.scss";
+
 .blog-categories {
     .category-reset {
-        padding: .15rem .5rem;
-        margin-right: .1rem;
-        margin-bottom: .1rem;
+        padding: 0.15rem 0.5rem;
+        margin-right: 0.1rem;
+        margin-bottom: 0.1rem;
         display: inline-flex;
         color: #494949;
 
@@ -11,7 +14,7 @@
 
             &::before {
                 line-height: 1;
-                vertical-align: -.25rem;
+                vertical-align: -0.25rem;
             }
         }
 
@@ -20,16 +23,15 @@
         &:focus {
             color: black;
         }
-
     }
 
     .category {
         position: relative;
         display: inline-flex;
-        padding: .15rem .5rem;
-        margin-right: .1rem;
-        margin-bottom: .1rem;
-        border-radius: .25rem;
+        padding: 0.15rem 0.5rem;
+        margin-right: 0.1rem;
+        margin-bottom: 0.1rem;
+        border-radius: 0.25rem;
 
         .color {
             display: inline-block;
@@ -37,10 +39,10 @@
             height: 7px;
             border-radius: 50%;
             margin: auto 0;
-            margin-right: .35rem;
+            margin-right: 0.35rem;
         }
-        
-        .name{
+
+        .name {
             margin: auto 0;
         }
 
@@ -71,13 +73,13 @@
     .feed-wrap {
         margin-top: 2rem;
         padding-bottom: 3rem;
-        background-color: rgba(#666, .1);
+        background-color: rgba(#666, 0.1);
 
         & > .container {
             width: 1200px;
-    
+
             max-width: 100% !important;
-    
+
             .blog-feed {
                 padding: 3rem 0 2rem;
             }
@@ -85,200 +87,28 @@
     }
 }
 
-.post-feed {
-    color: #000;
+.blog-search-wrap {
+    .heading {
+        padding: 3rem 0 1rem;
 
-    .col-12 {
-        width: 100%;
-        margin-bottom: 1rem;
-    }
-
-    .post {
-        border-radius: 0;
-        border: none;
-
-        position: relative;
-
-        .card-img-top {
-            position: relative;
-            z-index: 0;
-
-            overflow: hidden;
-            border-radius: 0;
-
-            img {
-                height: 100px;
-                width: 100%;
-                object-fit: cover;
-
-                transition: transform 0.3s;
-            }
-
-            .overlay {
-                opacity: 0.4;
-                inset: 0;
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                display: block;
-            }
-
-            &:hover,
-            &:focus,
-            &:active {
-                img {
-                    transform: scale(1.05);
-                }
-            }
-        }
-
-        .tag {
-            position: absolute;
-
-            padding: 0.25rem 0.75rem;
-
-            background-color: #000;
-            color: white;
-            top: 0.5rem;
-            right: 0.5rem;
-
-            font-weight: 500;
-            font-size: 0.9rem;
-
-            transition: background-color 0.3s;
-
-            &:hover,
-            &:focus,
-            &:active {
-                background-color: #222;
-            }
-        }
-
-        .card-body {
-            padding: 0 1rem;
-            // position: relative;
-
-            .author-image {
-                position: relative;
-                z-index: 1;
-                display: inline-flex;
-                margin-top: -48px;
-                margin-bottom: 0.75rem;
-
-                img {
-                    width: 48px;
-                    height: 48px;
-                    border-radius: 50%;
-                }
-            }
-
-            .card-title {
-                font-weight: 700;
-                transition: color 0.2s;
-                margin-bottom: 0.5rem;
-                letter-spacing: .2px;
-
-                &:hover,
-                &:active,
-                &:focus {
-                    color: #494949;
-                }
-            }
-
-            
-            .card-text {
-                font-size: 0.9rem;
-            }
-        }
-        
-        .meta {
-            // position: absolute;
-
-            // padding: 0.25rem 0.5rem;
-
-            // background: rgba(#f7f7f7, .6);
-            // backdrop-filter: blur(5px);
-            // left: 0.5rem;
-            // top: .5rem;
-            // border-radius: .25rem .25rem;
-
-            font-size: 0.8rem;
+        .action a {
             color: #aaa;
-            margin-bottom: 0.5rem;
+            font-size: .8rem;
 
-            span.bi-clock {
-                margin-right: .25rem;
-                font-size: .7rem;
-            }
-
-            span.sep {
-                color: #ccc;
-            }
-        }
-        
-        .card-footer {
-            background: none;
-            border: none;
-        }
-
-        &.featured {
-            background: none;
-            
-            .card-img-top {
-                position: absolute;
-                z-index: -1;
-                height: 97%;
-                top: 1.5%;
-
-                img {
-                    height: 100%;
-                }
-            }
-
-            
-            .card-body {
-                padding: 3rem 2rem;
-                margin-left: 2rem;
-                width: 500px;
-                position: relative;
-                background-color: rgba(#fff, .9);
-                backdrop-filter: blur(5px);
-                
-                .body-head-wrap {
-                    display: flex;
-                    position: relative;
-                    margin-bottom: 1.25rem;
-                    
-                    .author-image {
-                        margin: 0;
-                    }
-                    
-                    .tag-wrap {
-                        display: flex;
-                        position: relative;
-                        margin: auto 0;
-                        flex: 1;
-                        justify-content: end;
-                    }
-                    .tag {
-                        position: relative;
-                        right: 0;
-                        top: 0;
-                    }
-                }
-
-                h4.card-title {
-                    margin-bottom: 1rem;
-                }
-
-                .card-text {
-                    margin-bottom: 1.25rem;
-                }
-                
-            }
-            .meta {
-                margin: 0;
+            &:hover, &:active, &:focus {
+                color: #494949;
             }
         }
     }
+    .search-results {
+        padding: 1rem 0 3rem;
+        background-color: rgba(#666, 0.1);
+        
+        .container {
+            width: 1200px;
+            
+            max-width: 100% !important;
+        }
+    }
+    
 }

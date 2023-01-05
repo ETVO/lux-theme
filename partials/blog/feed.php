@@ -26,7 +26,7 @@ $show_featured = $args['show_featured'];
                 $author_name = get_the_author_meta('display_name');
                 $author_avatar = get_avatar(get_the_author_meta('ID'), 48);
 
-                $image_url = get_the_post_thumbnail_url($post->ID, 'thumbnail');
+                $image_url = get_the_post_thumbnail_url($post->ID, 'medium');
                 $image_alt = get_the_post_thumbnail_caption();
 
                 $categories = get_the_category();
@@ -41,14 +41,14 @@ $show_featured = $args['show_featured'];
                     $image_alt = get_the_post_thumbnail_caption();
         ?>
                     <small class="m-auto text-center">Artigo em destaque</small>
-                    <div class="col-12">
+                    <div class="col-12 d-none d-sm-block">
                         <div class="post featured card h-100">
                             <a class="card-img-top" href="<?php echo $permalink; ?>">
                                 <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>">
                                 <div class="overlay" style="background: linear-gradient(<?php echo $category_color; ?>, #66666680);"></div>
                             </a>
                             <div class="card-body">
-                                <div class="body-head-wrap">
+                                <div class="body-head-wrap d-none d-sm-flex">
                                     <div class="author-image">
                                         <?php if ($author_avatar) :
                                             echo $author_avatar;
@@ -62,6 +62,7 @@ $show_featured = $args['show_featured'];
                                         </a>
                                     </div>
                                 </div>
+
                                 <a href="<?php echo $permalink; ?>">
                                     <h4 class="card-title fs-3"><?php echo $title; ?></h4>
                                 </a>
@@ -69,7 +70,7 @@ $show_featured = $args['show_featured'];
                                     <?php echo $excerpt; ?>
                                 </p>
 
-                                <div class="meta d-flex flex-column flex-sm-row">
+                                <div class="meta d-flex">
                                     <span class="author-name"><?php echo $author_name; ?></span>
                                     <span class="sep mx-2">|</span>
                                     <span class="me-auto date"><?php echo $date; ?></span>
@@ -80,7 +81,44 @@ $show_featured = $args['show_featured'];
                             </div>
                         </div>
                     </div>
+                    
+                    <div class="col d-block d-sm-none">
+                        <div class="post card h-100">
+                            <a class="card-img-top" href="<?php echo $permalink; ?>">
+                                <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>">
+                                <div class="overlay" style="background: linear-gradient(<?php echo $category_color; ?>, #66666680);"></div>
+                            </a>
+                            <a class="tag" href="<?php echo "?category={$category->slug}"; ?>">
+                                <?php echo $category->name; ?>
+                            </a>
+                            <div class="card-body">
+                                <div class="author-image">
+                                    <?php if ($author_avatar) :
+                                        echo $author_avatar;
+                                    else : ?>
+                                        <span class="bi-person-fill"></span>
+                                    <?php endif; ?>
+                                </div>
+                                <a href="<?php echo $permalink; ?>">
+                                    <h4 class="card-title fs-5"><?php echo $title; ?></h4>
+                                </a>
+                                <div class="meta">
+                                    <?php echo $author_name; ?> <span class="sep">|</span>
+                                    <?php echo $date; ?> <span class="sep">|</span>
+                                    <span class="bi-clock"></span><?php echo "$reading_time"; ?>
+                                </div>
+                                <p class="card-text">
+                                    <?php echo $excerpt; ?>
+                                </p>
 
+                            </div>
+                            <div class="card-footer d-flex flex-column flex-sm-row">
+                                <!-- <small class="m-auto ms-0 author-name"><?php echo $author_name; ?></small> -->
+
+                                <!-- <a href="<?php echo $permalink; ?>" class="btn-cta m-auto me-0">continue lendo</a> -->
+                            </div>
+                        </div>
+                    </div>
 
                     <small class="col-12 m-auto pt-3 text-center" id="todos">Todos os artigos</small>
                 <?php

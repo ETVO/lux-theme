@@ -73,3 +73,13 @@ form {
         cursor: pointer;
     }
 }
+
+.inner-404 {
+    padding: 2rem 0 4rem;
+    a {
+        color: #aaa;
+        &:hover, &:active, &:focus {
+            color: #494949;
+        }
+    }
+}
