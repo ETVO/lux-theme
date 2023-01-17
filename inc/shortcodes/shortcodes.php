@@ -39,6 +39,7 @@ class Theme_Shortcodes {
         $codes = array(
             'cta_blog',
             'lux_no_caminho',
+            'redes_lux',
         );
 
         // Add shortcodes

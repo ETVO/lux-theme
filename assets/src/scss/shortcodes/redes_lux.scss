@@ -1,0 +1,23 @@
+.redes_lux {
+    margin-bottom: 2rem;
+    .title {
+        font-weight: 700;
+        font-size: 1.1rem;
+        margin-bottom: .5rem;
+    }
+    .social-icons {
+        a {
+            display: inline-block;
+            font-size: 1.35rem;
+            margin-right: .75rem;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &:hover, &:active, &:focus {
+                color: #9d00fe;
+            }
+        }
+    }
+}

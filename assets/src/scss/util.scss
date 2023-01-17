@@ -58,6 +58,18 @@ a.btn-cta {
     }
 }
 
+button.btn-cta, input.btn-cta {
+    &::after {
+        margin-left: .75rem;
+        font-weight: 500;
+        vertical-align: -0.2rem;
+        line-height: 1;
+        font-size: .9rem;
+        font-family: "bootstrap-icons";
+        content: "\F138";
+    }
+}
+
 @media all and (max-width: 576px) {
     a.btn-cta {
         &.format-strong {
@@ -160,4 +172,21 @@ a.btn-cta {
 
 .fs-bigger {
     font-size: 1.1rem !important;
+}
+
+.btn-purple {
+    --bs-btn-color: #fff !important;
+    --bs-btn-bg: #9d00fe !important;
+    --bs-btn-border-color: #9d00fe;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #ac28ff;
+    --bs-btn-hover-border-color: #ac28ff;
+    --bs-btn-focus-shadow-rgb: 216, 174, 0;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #ac28ff;
+    --bs-btn-active-border-color: #ac28ff;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #c673fa;
+    --bs-btn-disabled-border-color: #c673fa;
 }

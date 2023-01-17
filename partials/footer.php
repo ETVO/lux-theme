@@ -86,12 +86,14 @@ $portal_cliente = get_theme_mod('portal_cliente');
                     </a>
                 </div>
 
+                <?php if($portal_cliente): ?>
                 <div class="link-cliente my-3">
                     <a href="<?php echo $portal_cliente; ?>">
                         <span class="icon bi-person-fill"></span>
                         <span>Portal do Cliente</span>
                     </a>
                 </div>
+                <?php endif; ?>
             </div>
 
             <div class="recent-posts col-12 col-lg-8 mt-4 mt-lg-0">
