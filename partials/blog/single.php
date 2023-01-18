@@ -25,8 +25,8 @@ $excerpt = get_the_excerpt();
 $date = get_the_date();
 $categories = get_the_category();
 
-$author_name = get_the_author_meta('display_name');
-$author_avatar = get_avatar(get_the_author_meta('ID'), 48);
+$author_name = get_the_author_meta('display_name', $post->post_author);
+$author_avatar = get_avatar($post->post_author, 48);
 $reading_time = get_reading_time($post->ID);
 
 ?>
@@ -59,7 +59,7 @@ $reading_time = get_reading_time($post->ID);
 
             <div class="categories">
                 <?php foreach ($categories as $category) : ?>
-                    <a class="tag" href="<?php echo "?category={$category->slug}"; ?>">
+                    <a class="tag" href="<?php echo $blog_url . "?category={$category->slug}"; ?>">
                         <?php echo $category->name; ?>
                     </a>
                 <?php endforeach; ?>
@@ -109,8 +109,8 @@ $reading_time = get_reading_time($post->ID);
                         $title = get_the_title();
                         $excerpt = get_the_excerpt();
 
-                        $author_name = get_the_author_meta('display_name');
-                        $author_avatar = get_avatar(get_the_author_meta('ID'), 48);
+                        $author_name = get_the_author_meta('display_name', $post->post_author);
+                        $author_avatar = get_avatar($post->post_author, 48);
 
                         $image_url = get_the_post_thumbnail_url($post->ID, 'thumbnail');
                         $image_alt = get_the_post_thumbnail_caption();
@@ -130,7 +130,7 @@ $reading_time = get_reading_time($post->ID);
                                     <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>">
                                     <div class="overlay" style="background: linear-gradient(<?php echo $category_color; ?>, #66666680);"></div>
                                 </a>
-                                <a class="tag" href="<?php echo "?category={$category->slug}"; ?>">
+                                <a class="tag" href="<?php echo $blog_url . "?category={$category->slug}"; ?>">
                                     <?php echo $category->name; ?>
                                 </a>
                                 <div class="card-body">

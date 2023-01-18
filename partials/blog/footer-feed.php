@@ -65,7 +65,7 @@ if ($query->have_posts()) : ?>
                             </div>
                         </a>
                         <div class="tag-wrap">
-                            <a class="tag" href="<?php echo "?category={$category->slug}"; ?>">
+                            <a class="tag" href="<?php echo $archive_link . "?category={$category->slug}"; ?>">
                                 <?php echo $category->name; ?>
                             </a>        
                         </div>

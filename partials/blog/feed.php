@@ -23,8 +23,8 @@ $show_featured = $args['show_featured'];
                 $title = get_the_title();
                 $excerpt = get_the_excerpt();
 
-                $author_name = get_the_author_meta('display_name');
-                $author_avatar = get_avatar(get_the_author_meta('ID'), 48);
+                $author_name = get_the_author_meta('display_name', $post->post_author);
+                $author_avatar = get_avatar($post->post_author, 48);
 
                 $image_url = get_the_post_thumbnail_url($post->ID, 'medium');
                 $image_alt = get_the_post_thumbnail_caption();
