@@ -241,6 +241,7 @@ final class Theme_Functions
 		wp_enqueue_style('bootstrap-icons', $dir . 'bootstrap-icons/bootstrap-icons.css', [], "1.5.0", false);
 		wp_enqueue_style('raleway', $dir . 'Raleway/font.css', [], $version, false);
 		wp_enqueue_style('albert-sans', $dir . 'Albert-Sans/font.css', [], $version, false);
+		wp_enqueue_style('caveat', $dir . 'Caveat/font.css', [], $version, false);
 	}
 
 	/**

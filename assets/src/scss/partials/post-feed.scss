@@ -241,3 +241,13 @@
         }
     }
 }
+
+@media all and (max-width: 576px) {
+    .post-feed {
+        &.row > .col {
+            padding-right: 0;
+            padding-left: 0;
+            margin-bottom: 1rem;
+        }
+    }
+}
